@@ -1,0 +1,13 @@
+.featuresListContainer {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+@media (max-width: 48rem) {
+  .featuresListContainer {
+    display: block;
+  }
+}

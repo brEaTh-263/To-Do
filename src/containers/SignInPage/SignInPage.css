@@ -1,0 +1,63 @@
+.container {
+  background-image: url("../../assets//background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(242, 242, 242);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logo {
+  transform: translateY(-2rem);
+}
+
+.subTitle {
+  width: 400px;
+  margin: 0 auto;
+  padding: auto 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  /* margin-bottom: 1rem; */
+  transform: translateY(-2rem);
+}
+
+video {
+  display: block;
+  margin: 1rem auto;
+  width: 200px;
+}
+
+.SignInButton {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  border: none;
+  font-size: 1rem;
+  box-shadow: rgb(0 0 0 / 8%) 0px 10px 20px 0px;
+}
+
+.SignInButton:hover,
+.SignInButton:focus {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.info {
+  color: #888;
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .subTitle {
+    width: 250px;
+  }
+  .info {
+    font-size: 0.6rem;
+  }
+}

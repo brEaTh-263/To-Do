@@ -1,0 +1,57 @@
+.Container {
+  text-align: center;
+  padding: 5rem 0;
+  margin: 5rem 0rem;
+}
+
+.default {
+  background-color: white;
+}
+
+.Title {
+  font-size: 2.5rem;
+  width: 60%;
+  margin: auto;
+}
+
+.Content {
+  font-size: 1.5rem;
+  width: 60%;
+  margin: 2rem auto;
+}
+
+.TitleStand {
+  color: #61e178;
+  background-color: rgba(97, 225, 120, 0.3);
+}
+
+.button {
+  margin: 15px auto;
+  display: block;
+  background-color: black;
+  color: white;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.button:hover {
+  background-color: #61e178;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 48rem) {
+  .button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+  .Title {
+    font-size: 1.5rem;
+    width: 80%;
+  }
+
+  .Content {
+    font-size: 1rem;
+  }
+}
