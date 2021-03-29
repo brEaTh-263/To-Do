@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./MainPart.css";
 import Logo from "../Logo";
 import { withRouter } from "react-router";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const MainPart = (props) => {
@@ -24,7 +23,6 @@ const MainPart = (props) => {
     },
   };
 
-  useEffect(() => {}, []);
 
   return (
     <motion.div className={classes.MainPart}>

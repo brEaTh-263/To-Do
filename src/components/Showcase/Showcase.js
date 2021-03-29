@@ -1,15 +1,19 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import classes from "./Showcase.css";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import {withRouter} from "react-router-dom"
 
-export default function Showcase(props) {
+const Showcase=(props)=> {
   let containerStyle = classes.Container;
   if (props.background) {
     containerStyle = classes.Container + " " + classes.default;
     console.log(containerStyle);
   }
+
+   const navigateToSignInHandler = () => {
+    props.history.push("/sign-in");
+  };
 
   const { inView, ref } = useInView();
   const controls = useAnimation();
@@ -52,9 +56,12 @@ export default function Showcase(props) {
         {props.content && <p className={classes.Content}>{props.content}</p>}
         {props.children}
         {props.button && (
-          <button className={classes.button}>{props.button}</button>
+          <button onClick={navigateToSignInHandler} className={classes.button}>{props.button}</button>
         )}
       </motion.div>
     </motion.section>
   );
 }
+
+
+export default withRouter(Showcase)

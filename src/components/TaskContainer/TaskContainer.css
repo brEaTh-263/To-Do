@@ -1,0 +1,41 @@
+.taskContainer {
+	display: flex;
+	align-items: center;
+
+	padding-right: 1rem;
+	position: relative;
+}
+
+.taskContainer p {
+	margin: 1rem 1rem;
+}
+
+.taskContainer del {
+	margin: 1rem 1rem;
+}
+
+.crossIcon {
+	display: none;
+	position: absolute;
+	color: rgba(0, 0, 0, 0.7);
+	right: 1rem;
+}
+
+.taskContainer .bulletOutlineIcon {
+	cursor: pointer;
+}
+
+.taskContainer:hover {
+	box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 13px 0px;
+	cursor: text;
+}
+
+.taskContainer:hover .crossIcon {
+	display: inline;
+}
+
+.crossIcon:hover {
+	border-radius: 5rem;
+	background-color: rgba(0, 0, 0, 0.13);
+	cursor: pointer;
+}
