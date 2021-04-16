@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import classes from "./HomePage.css";
 import logo from "../../assets/logo.png";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,7 +8,6 @@ import * as taskActions from "../../store/actions/Task";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import AddIcon from "@material-ui/icons/Add";
-
 import SendIcon from "@material-ui/icons/Send";
 import TaskContainer from "../../components/TaskContainer/TaskContainer";
 
@@ -16,16 +15,17 @@ export default function HomePage(props) {
   const dispatch = useDispatch();
   const profileDetails = useSelector((state) => state.Auth);
   const storedTasks = useSelector((state) => state.Task.tasks);
+  // const [isLoading,setIsLoading]=useState(false)
   const [tasks,setTasks]=useState(storedTasks)
-
   const [task, setTask] = useState("");
 
-
   useEffect(() => {
-    if (!profileDetails.isAuth) {
-      props.history.replace("sign-in");
+    if(!profileDetails.isAuth){
+
+      return props.history.push("/")
     }
-  },[profileDetails.isAuth,props.history]);
+  },[props.history,profileDetails.isAuth]);
+
 
 
 
@@ -48,6 +48,7 @@ export default function HomePage(props) {
     await dispatch(taskActions.deleteTask(index,task))
     setTasks(storedTasks)
   }
+
 
   return (
     <div className={classes.container}>
@@ -93,14 +94,14 @@ export default function HomePage(props) {
         </div>
         
       </div>
-      <Button
+      {/* <Button
         variant="contained"
         size="small"
         className={classes.phoneFooterButton}
         startIcon={<BusinessCenterIcon />}
       >
         Manage
-      </Button>
+      </Button> */}
       <div className={classes.phoneFooter}>
         <img
           className={classes.phoneFooterAvatar}

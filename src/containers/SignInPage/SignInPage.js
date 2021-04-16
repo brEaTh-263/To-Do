@@ -26,13 +26,7 @@ export default function SignInPage(props) {
       .auth()
       .signInWithPopup(provider)
       .then((result) => {
-        /** @type {firebase.auth.OAuthCredential} */
-        // var credential = result.credential;
-        
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        // var token = credential.accessToken;
-        // console.log(token);
-        // The signed-in user info.
+       
         let name = result.user.displayName;
         let email = result.user.email;
         let token = result.user.getIdToken();
