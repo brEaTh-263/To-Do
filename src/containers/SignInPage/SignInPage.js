@@ -20,7 +20,7 @@ export default function SignInPage(props) {
 
   const signInHandler = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(()=>{
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(()=>{
 
       firebase
       .auth()

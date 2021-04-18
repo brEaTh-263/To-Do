@@ -1,12 +1,15 @@
+
 import firebase from "../../firebase";
+
 export const SIGN_OUT = "SIGN_OUT";
 export const SIGN_IN = "SIGN_IN";
 
 export const autoLogin = () => {
   return async (dispatch) => {
-    // const user=await firebase.auth()
+   
     const user =firebase.auth().currentUser;
     console.log(user)
+  
     if (user) {
       let name = user.displayName;
       let email = user.email;
@@ -17,7 +20,7 @@ export const autoLogin = () => {
         db.collection("tasks").doc(userId).get().then(doc=>{
         dispatch({type:SIGN_IN, payload: {
         userId: userId,
-        token: token,
+      token: token,
         name,
         email,
         displayPicture,
